@@ -1,0 +1,55 @@
+{
+  "name": "@nyarthan/eslint-config",
+  "version": "0.1.0",
+  "description": "Sharable ESLint configuration",
+  "author": "Jannis Morgenstern <jannis.n.morgenstern@gmail.com> (https://github.com/nyarthan)",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "homepage": "https://github.com/nyarthan/eslint-config?tab=readme-ov-file",
+  "repository": "github:nyarthan/eslint-config",
+  "bugs": "https://github.com/nyarthan/eslint-config/issues",
+  "packageManager": "pnpm@10.8.0",
+  "type": "module",
+  "imports": {
+    "#package.json": "./package.json"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "husky || true",
+    "prettier": "scripts/with-strip-types prettier",
+    "changeset": "scripts/with-strip-types changeset",
+    "node": "scripts/with-strip-types node",
+    "format:check": "pnpm prettier --check .",
+    "format": "pnpm prettier --write .",
+    "build": "rslib build",
+    "release": "pnpm publish --access public --provenance",
+    "prerelease": "pnpm build"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.28.1",
+    "@commitlint/cli": "19.8.0",
+    "@commitlint/config-conventional": "19.8.0",
+    "@commitlint/format": "19.8.0",
+    "@commitlint/types": "19.8.0",
+    "@ianvs/prettier-plugin-sort-imports": "4.4.1",
+    "@nyarthan/prettier-config": "1.0.1",
+    "@rslib/core": "0.6.2",
+    "@types/node": "22.14.1",
+    "conventional-changelog-atom": "5.0.0",
+    "husky": "9.1.7",
+    "prettier": "3.5.3",
+    "rsbuild-plugin-dts": "0.6.2",
+    "typescript": "5.8.3"
+  }
+}
