@@ -32,6 +32,8 @@
     "node": "scripts/with-strip-types node",
     "format:check": "pnpm prettier --check .",
     "format": "pnpm prettier --write .",
+    "lint": "eslint --cache",
+    "lint:fix": "eslint --cache --fix",
     "build": "rslib build",
     "release": "pnpm publish --access public --provenance",
     "prerelease": "pnpm build"
@@ -47,6 +49,7 @@
     "@rslib/core": "0.6.2",
     "@types/node": "22.14.1",
     "conventional-changelog-atom": "5.0.0",
+    "eslint": "9.25.1",
     "husky": "9.1.7",
     "prettier": "3.5.3",
     "rsbuild-plugin-dts": "0.6.2",
