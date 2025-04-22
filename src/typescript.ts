@@ -18,6 +18,33 @@ export const typescriptConfig = defineConfig({
     "no-dupe-args": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-dupe-class-members} */
-    'no-dupe-class-members': 'off'
+    'no-dupe-class-members': 'off',
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-dupe-keys} */
+    "no-dupe-keys": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-func-assign} */
+    "no-func-assign": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-import-assign} */
+    "no-import-assign": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-new-native-constructor} */
+    "no-new-native-constructor": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-obj-calls} */
+    "no-obj-calls": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-setter-return} */
+    "no-setter-return": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-this-before-super} */
+    "no-this-before-super": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-undef} */
+    "no-undef": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-unsafe-negation} */
+    "no-unsafe-negation": "off",
   },
 });

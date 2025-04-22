@@ -79,6 +79,9 @@ export const baseConfig = defineConfig({
     /** @see {@link https://eslint.org/docs/latest/rules/no-duplicate-case} */
     "no-duplicate-case": "error",
 
+    /** @see {@link https://eslint.org/docs/latest/rules/no-duplicate-imports} */
+    "no-duplicate-imports": "off",
+
     /** @see {@link https://eslint.org/docs/latest/rules/no-empty-character-class} */
     "no-empty-character-class": "error",
 
@@ -89,7 +92,7 @@ export const baseConfig = defineConfig({
     "no-ex-assign": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-fallthrough} */
-    "no-fallthrough": "error",
+    "no-fallthrough": ["error", {allowEmptyCase: true}],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-func-assign} */
     "no-func-assign": "error",
@@ -98,19 +101,25 @@ export const baseConfig = defineConfig({
     "no-import-assign": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-inner-declaration} */
-    "no-inner-declaration": "error",
+    "no-inner-declaration": ["error", "both"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-invalid-regexp} */
     "no-invalid-regexp": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-irregular-whitespace} */
-    "no-irregular-whitespace": "error",
+    "no-irregular-whitespace": ["error", {
+      skipStrings: false,
+      skipComments: false,
+      skipRegExps: false,
+      skipTemplates: false,
+      skipJSXText: false
+    }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-loss-of-precision} */
     "no-loss-of-precision": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-misleading-character-class} */
-    "no-misleading-character-class": "error",
+    "no-misleading-character-class": ["error", {allowEscape: true}],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-new-native-constructor} */
     "no-new-native-constructor": "error",
@@ -146,7 +155,7 @@ export const baseConfig = defineConfig({
     "no-undef": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unexpecter-multiline} */
-    "no-unexpecter-multiline": "error",
+    "no-unexpecter-multiline": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unmodified-loop-condition} */
     "no-unmodified-loop-condition": "error",
@@ -164,7 +173,7 @@ export const baseConfig = defineConfig({
     "no-unsafe-negation": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining} */
-    "no-unsafe-optional-chaining": "error",
+    "no-unsafe-optional-chaining": ["error", {disallowArithmeticOperators: true}],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unused-private-class-members} */
     "no-unused-private-class-members": "error",
@@ -188,8 +197,9 @@ export const baseConfig = defineConfig({
     "use-isnan": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/valid-typeof} */
-    "valid-typeof": "error",
+    "valid-typeof": ["error", {requireStringLiterals: true}],
 
+    // here
     /** @see {@link https://eslint.org/docs/latest/rules/accessor-pairs} */
     "accessor-pairs": "error",
 
