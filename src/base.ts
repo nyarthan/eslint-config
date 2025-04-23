@@ -101,7 +101,7 @@ export const baseConfig = defineConfig({
     "no-import-assign": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-inner-declaration} */
-    "no-inner-declaration": ["error", "both"],
+    "no-inner-declarations": ["error", "both"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-invalid-regexp} */
     "no-invalid-regexp": "error",
@@ -302,7 +302,7 @@ export const baseConfig = defineConfig({
     "init-declarations": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/logical-assignment-operators} */
-    "logical-assignment-operators": ["error", { enforceForIfStatements: true }],
+    "logical-assignment-operators": ["error", "always", { enforceForIfStatements: true }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-classes-per-file} */
     "max-classes-per-file": "off",
@@ -425,7 +425,7 @@ export const baseConfig = defineConfig({
     "no-magic-numbers": [
       "error",
       {
-        ignoreefaultValues: true,
+        ignoreDefaultValues: true,
         ignoreClassFieldInitialValues: true,
         enforceConst: true,
       },
@@ -483,13 +483,12 @@ export const baseConfig = defineConfig({
     "no-restricted-exports": [
       "error",
       {
-        restrictedNamedExports: ["default"],
         restrictDefaultExports: {
           direct: true,
           named: true,
-          defaultForm: true,
-          namedForm: true,
-          namespcaceForm: true,
+          defaultFrom: true,
+          namedFrom: true,
+          namespaceFrom: true,
         },
       },
     ],
