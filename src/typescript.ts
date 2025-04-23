@@ -46,5 +46,8 @@ export const typescriptConfig = defineConfig({
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unsafe-negation} */
     "no-unsafe-negation": "off",
+
+    /** @see {@link https://eslint.org/docs/latest/rules/no-redeclare} */
+    "no-redeclare": "error",
   },
 });

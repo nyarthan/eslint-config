@@ -92,7 +92,7 @@ export const baseConfig = defineConfig({
     "no-ex-assign": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-fallthrough} */
-    "no-fallthrough": ["error", {allowEmptyCase: true}],
+    "no-fallthrough": ["error", { allowEmptyCase: true }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-func-assign} */
     "no-func-assign": "error",
@@ -107,19 +107,22 @@ export const baseConfig = defineConfig({
     "no-invalid-regexp": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-irregular-whitespace} */
-    "no-irregular-whitespace": ["error", {
-      skipStrings: false,
-      skipComments: false,
-      skipRegExps: false,
-      skipTemplates: false,
-      skipJSXText: false
-    }],
+    "no-irregular-whitespace": [
+      "error",
+      {
+        skipStrings: false,
+        skipComments: false,
+        skipRegExps: false,
+        skipTemplates: false,
+        skipJSXText: false,
+      },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-loss-of-precision} */
     "no-loss-of-precision": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-misleading-character-class} */
-    "no-misleading-character-class": ["error", {allowEscape: true}],
+    "no-misleading-character-class": ["error", { allowEscape: true }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-new-native-constructor} */
     "no-new-native-constructor": "error",
@@ -173,7 +176,10 @@ export const baseConfig = defineConfig({
     "no-unsafe-negation": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining} */
-    "no-unsafe-optional-chaining": ["error", {disallowArithmeticOperators: true}],
+    "no-unsafe-optional-chaining": [
+      "error",
+      { disallowArithmeticOperators: true },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unused-private-class-members} */
     "no-unused-private-class-members": "error",
@@ -197,38 +203,50 @@ export const baseConfig = defineConfig({
     "use-isnan": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/valid-typeof} */
-    "valid-typeof": ["error", {requireStringLiterals: true}],
+    "valid-typeof": ["error", { requireStringLiterals: true }],
 
-    // here
     /** @see {@link https://eslint.org/docs/latest/rules/accessor-pairs} */
-    "accessor-pairs": "error",
+    "accessor-pairs": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/arrow-body-style} */
-    "arrow-body-style": "error",
+    "arrow-body-style": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/block-scoped-var} */
     "block-scoped-var": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/camelcase} */
-    "camelcase": "error",
+    "camelcase": [
+      "error",
+      {
+        properties: "always",
+        ignoreDestructuring: false,
+        ignoreImports: false,
+        ignoreGlobals: false,
+      },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/capitalized-comments} */
-    "capitalized-comments": "error",
+    "capitalized-comments": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/class-methods-use-this} */
-    "class-methods-use-this": "error",
+    "class-methods-use-this": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/complexity} */
-    "complexity": "error",
+    "complexity": ["error", { max: 20, variant: "modified" }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/consistent-return} */
-    "consistent-return": "error",
+    "consistent-return": [
+      "error",
+      {
+        treatUndefinedAsUnspecified: false,
+      },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/consistent-this} */
-    "consistent-this": "error",
+    "consistent-this": ["error", "that", "self"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/curly} */
-    "curly": "error",
+    "curly": ["error", "all"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/default-case} */
     "default-case": "error",
@@ -239,62 +257,73 @@ export const baseConfig = defineConfig({
     /** @see {@link https://eslint.org/docs/latest/rules/default-param-last} */
     "default-param-last": "error",
 
+    // TODO: check with ts
     /** @see {@link https://eslint.org/docs/latest/rules/dot-notation} */
-    "dot-notation": "error",
+    "dot-notation": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/eqeqeq} */
-    "eqeqeq": "error",
+    "eqeqeq": ["error", "always"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/func-name-matching} */
-    "func-name-matching": "error",
+    "func-name-matching": [
+      "error",
+      {
+        considerPropertyDescriptor: false,
+        includeCommonJSModuleExports: false,
+      },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/func-names} */
-    "func-names": "error",
+    "func-names": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/func-style} */
-    "func-style": "error",
+    "func-style": [
+      "error",
+      "declaration",
+      { allowArrowFunctions: true, overrides: { namedExports: "declaration" } },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/grouped-accessor-pairs} */
-    "grouped-accessor-pairs": "error",
+    "grouped-accessor-pairs": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/guard-for-in} */
     "guard-for-in": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/id-denylist} */
-    "id-denylist": "error",
+    "id-denylist": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/id-length} */
-    "id-length": "error",
+    "id-length": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/id-match} */
-    "id-match": "error",
+    "id-match": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/init-declarations} */
-    "init-declarations": "error",
+    "init-declarations": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/logical-assignment-operators} */
-    "logical-assignment-operators": "error",
+    "logical-assignment-operators": ["error", { enforceForIfStatements: true }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-classes-per-file} */
-    "max-classes-per-file": "error",
+    "max-classes-per-file": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-depth} */
-    "max-depth": "error",
+    "max-depth": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-lines} */
-    "max-lines": "error",
+    "max-lines": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-lines-per-function} */
-    "max-lines-per-function": "error",
+    "max-lines-per-function": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-nested-callbacks} */
-    "max-nested-callbacks": "error",
+    "max-nested-callbacks": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-params} */
-    "max-params": "error",
+    "max-params": ["error", { max: 3 }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/max-statements} */
-    "max-statements": "error",
+    "max-statements": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/new-cap} */
     "new-cap": "error",
@@ -306,7 +335,7 @@ export const baseConfig = defineConfig({
     "no-array-constructor": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-bitwise} */
-    "no-bitwise": "error",
+    "no-bitwise": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-caller} */
     "no-caller": "error",
@@ -318,16 +347,16 @@ export const baseConfig = defineConfig({
     "no-console": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-continue} */
-    "no-continue": "error",
+    "no-continue": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-delete-var} */
     "no-delete-var": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-div-regex} */
-    "no-div-regex": "error",
+    "no-div-regex": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-else-return} */
-    "no-else-return": "error",
+    "no-else-return": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-empty} */
     "no-empty": "error",
@@ -339,7 +368,7 @@ export const baseConfig = defineConfig({
     "no-empty-static-block": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-eq-null} */
-    "no-eq-null": "error",
+    "no-eq-null": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-eval} */
     "no-eval": "error",
@@ -351,7 +380,7 @@ export const baseConfig = defineConfig({
     "no-extra-bind": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-extra-boolean-cast} */
-    "no-extra-boolean-cast": "error",
+    "no-extra-boolean-cast": ["error", { enforceForInnerExpressions: true }],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-extra-label} */
     "no-extra-label": "error",
@@ -369,7 +398,7 @@ export const baseConfig = defineConfig({
     "no-implied-eval": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-inline-comments} */
-    "no-inline-comments": "error",
+    "no-inline-comments": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-invalid-this} */
     "no-invalid-this": "error",
@@ -393,13 +422,20 @@ export const baseConfig = defineConfig({
     "no-loop-func": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-magic-numbers} */
-    "no-magic-numbers": "error",
+    "no-magic-numbers": [
+      "error",
+      {
+        ignoreefaultValues: true,
+        ignoreClassFieldInitialValues: true,
+        enforceConst: true,
+      },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-multi-assign} */
     "no-multi-assign": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-multi-str} */
-    "no-multi-str": "error",
+    "no-multi-str": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-negated-condition} */
     "no-negated-condition": "error",
@@ -432,10 +468,10 @@ export const baseConfig = defineConfig({
     "no-param-reassign": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-plusplus} */
-    "no-plusplus": "error",
+    "no-plusplus": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-proto} */
-    "no-proto": "error",
+    "no-proto": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-redeclare} */
     "no-redeclare": "error",
@@ -444,19 +480,31 @@ export const baseConfig = defineConfig({
     "no-regex-spaces": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-restricted-exports} */
-    "no-restricted-exports": "error",
+    "no-restricted-exports": [
+      "error",
+      {
+        restrictedNamedExports: ["default"],
+        restrictDefaultExports: {
+          direct: true,
+          named: true,
+          defaultForm: true,
+          namedForm: true,
+          namespcaceForm: true,
+        },
+      },
+    ],
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-restricted-globals} */
-    "no-restricted-globals": "error",
+    "no-restricted-globals": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-restricted-imports} */
-    "no-restricted-imports": "error",
+    "no-restricted-imports": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-restricted-properties} */
-    "no-restricted-properties": "error",
+    "no-restricted-properties": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-restricted-syntax} */
-    "no-restricted-syntax": "error",
+    "no-restricted-syntax": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-return-assign} */
     "no-return-assign": "error",
@@ -474,19 +522,20 @@ export const baseConfig = defineConfig({
     "no-shadow-restricted-names": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-ternary} */
-    "no-ternary": "error",
+    "no-ternary": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-throw-literal} */
     "no-throw-literal": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-undef-init} */
-    "no-undef-init": "error",
+    "no-undef-init": "off",
 
+    // here
     /** @see {@link https://eslint.org/docs/latest/rules/no-undefined} */
     "no-undefined": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-underscore-dangle} */
-    "no-underscore-dangle": "error",
+    "no-underscore-dangle": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-unneeded-ternary} */
     "no-unneeded-ternary": "error",
@@ -525,22 +574,22 @@ export const baseConfig = defineConfig({
     "no-var": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-void} */
-    "no-void": "error",
+    "no-void": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-warning-comments} */
-    "no-warning-comments": "error",
+    "no-warning-comments": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-with} */
     "no-with": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/object-shorthand} */
-    "object-shorthand": "error",
+    "object-shorthand": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/one-var} */
-    "one-var": "error",
+    "one-var": ["error", "never"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/operator-assignment} */
-    "operator-assignment": "error",
+    "operator-assignment": ["error", "always"],
 
     /** @see {@link https://eslint.org/docs/latest/rules/prefer-arrow-callback} */
     "prefer-arrow-callback": "error",
@@ -594,24 +643,24 @@ export const baseConfig = defineConfig({
     "require-yield": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/sort-imports} */
-    "sort-imports": "error",
+    "sort-imports": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/sort-keys} */
-    "sort-keys": "error",
+    "sort-keys": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/sort-vars} */
-    "sort-vars": "error",
+    "sort-vars": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/strict} */
-    "strict": "error",
+    "strict": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/symbol-description} */
     "symbol-description": "error",
 
     /** @see {@link https://eslint.org/docs/latest/rules/vars-on-top} */
-    "vars-on-top": "error",
+    "vars-on-top": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/yoda} */
-    "yoda": "error",
+    "yoda": "off",
   },
 });
