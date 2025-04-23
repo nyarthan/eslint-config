@@ -1,6 +1,6 @@
 import { defineConfig } from "eslint/config";
 
 import { baseConfig } from "./src/base";
-import { typescriptDisableBaseConfig } from "./src/typescript";
+import { typescriptConfig } from "./src/typescript";
 
-export default defineConfig(baseConfig, typescriptDisableBaseConfig);
+export default defineConfig({files: ['**/*.{ts,tsx}']}, baseConfig, typescriptConfig);
