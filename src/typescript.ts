@@ -18,7 +18,7 @@ export const typescriptConfig = defineConfig({
     "no-dupe-args": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-dupe-class-members} */
-    'no-dupe-class-members': 'off',
+    "no-dupe-class-members": "off",
 
     /** @see {@link https://eslint.org/docs/latest/rules/no-dupe-keys} */
     "no-dupe-keys": "off",
